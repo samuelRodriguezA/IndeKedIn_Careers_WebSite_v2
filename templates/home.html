@@ -1,54 +1,39 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>IndeKedIn Careers</title>
-    <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(100, 100, 100);
-        text-align: center;
-      }
-      #banner {
-        width: 100%;
-        height: 360px;
-        object-fit: cover;
-      }  
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100, 100, 100);
-        text-align: center;
-        font-weight: normal;
-      }
-      
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      .bodytext{
-        font-family: Roboto;
-        color: rgb(80, 80, 80);
-      }
-    </style>
-  </head>
-      <body>
-        <div id="container">
-        <h1>IndeKedIn Careers</h1>
-        <img id="banner" src="static/banner.jpg" alt="IndeKedIn Careers"
-height="320">
-        <h2>About IndeKedIn
-        </h2>
-        <p class='bodytext'>
-          IndeKedIn is more than just a career site – we are a dedicated team of industry experts, tech enthusiasts, and career advocates united by a common mission: to revolutionize the way professionals connect with opportunities. With a commitment to excellence, innovation, and inclusivity, we've created a platform that goes beyond traditional job search to offer a comprehensive ecosystem for career development.
-        </p>
-        <h2>Open Position</h2>
-        <p class='bodytext'>TODO - Show the jobs here</p>
-          <div style="text-align:center">
-        <button>Contact Us</button>
-            <p>Copyright 2022, Samuel Rodriguez Armesto</p>
-          </div>
-        </div>
-      </body>
-</html>
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>{{company_name}} Careers</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <style>
+              #banner {
+                width: 100%;
+                height: 360px;
+                object-fit: cover;
+              }
+            </style>
+          </head>
+          <body class='container'>
+            <div>
+              <h1 class='text-center mt-2 mb-4'>
+                IndeKedIn Careers
+              </h1>
+              <img class="img-fluid" id="banner" src="static/banner.jpg" alt="IndeKedIn Careers" height="320">
+              <h2 class='text-center mt-2 mb-4'>About IndeKedIn</h2>
+              <p class='lead'>
+                IndeKedIn is more than just a career site – we are a dedicated team of industry experts, tech enthusiasts, and career advocates united by a common mission: to revolutionize the way professionals connect with opportunities. With a commitment to excellence, innovation, and inclusivity, we've created a platform that goes beyond traditional job search to offer a comprehensive ecosystem for career development.
+              </p>
+              <h2 class='text-center mt-4'>Open Position</h2>
+              <div>
+                {% for job in jobs %}
+                 {% include 'jobitem.html' %}
+                {% endfor %}
+              </div>
+              <div class='text-center'>
+                <button class='btn btn-primary btn-lg'>Contact Us</button>
+                <p class="mt-4">Copyright 2024, Samuel Rodriguez Armesto</p>
+              </div>
+            </div>
+          </body>
+        </html>
