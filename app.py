@@ -16,7 +16,14 @@ def hello_indekedin():
 def list_jobs():
     jobs = load_jobs_from_db()
     return jsonify(jobs)
-
+@app.route("/positions")
+def show_positions():
+    jobs = load_jobs_from_db()
+    return render_template('positions.html',
+                          jobs=jobs)
+@app.route("/about")
+def show_about():
+    return render_template('about.html')
 @app.route("/job/<id>")
 def show_job(id):
     job = load_job_from_db(id)
